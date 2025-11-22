@@ -26,9 +26,15 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v4
         with:
+          # 👇 If Dockerfile is inside ./app
           context: ./app
+          file: ./app/Dockerfile
           push: false
           tags: local-webapp:latest
+
+          # 👇 If Dockerfile is at repo root, use instead:
+          # context: .
+          # file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
