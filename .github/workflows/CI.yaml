@@ -28,7 +28,7 @@ jobs:
         with:
           # 👇 If Dockerfile is inside ./app
           context: ./app
-          file: ./app/Dockerfile
+          file: ./Dockerfile
           push: false
           tags: local-webapp:latest
 
